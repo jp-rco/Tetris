@@ -22,15 +22,6 @@ canvas {
     flex-grow: 1;
 }
 
-footer {
-    margin: 1rem 0;
-    font-size: 1rem;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
 a{
     text-decoration: none;
@@ -71,7 +62,7 @@ img {
 
 .start {
     position: absolute;
-    background: linear-gradient(black, blue, black);
+    background: linear-gradient(black, rgb(0, 183, 255), black);
     width: 100vw;
     height: 100vh;
     top: 0;

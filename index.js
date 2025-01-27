@@ -134,11 +134,6 @@ $start.addEventListener("click", e => {
     console.log("Juego iniciado");
     update();
     $start.remove();
-
-    const audio = new Audio('./assets/tetris.mp3');
-    audio.volume = .5;
-    audio.play();
-    audio.loop = true;
 });
 
 // Dibujar el canvas
