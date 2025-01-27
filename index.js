@@ -261,3 +261,41 @@ d.addEventListener("keydown", e => {
         if (checkCollision()) piece.shape = previousShape;
     }
 });
+
+// Para dispositivos móviles
+d.addEventListener("click", e => {
+    if (!gameStarted) return;
+
+    if (e.target.matches(".left")) {
+        piece.position.x--;
+        if (checkCollision()) piece.position.x++;
+    }
+    if (e.target.matches(".right")) {
+        piece.position.x++;
+        if (checkCollision()) piece.position.x--;
+    }
+    if (e.target.matches(".down")) {
+        piece.position.y++;
+        if (checkCollision()) {
+            piece.position.y--;
+            solidifyPieces();
+            removeRows();
+        }
+    }
+    if (e.target.matches(".up")) {
+        const shapeRotated = [];
+
+        for (let i = 0; i < piece.shape[0].length; i++) {
+            const row = [];
+
+            for (let j = piece.shape.length - 1; j >= 0; j--) {
+                row.push(piece.shape[j][i])
+            }
+
+            shapeRotated.push(row);
+        }
+        const previousShape = piece.shape;
+        piece.shape = shapeRotated;
+        if (checkCollision()) piece.shape = previousShape;
+    }
+});
